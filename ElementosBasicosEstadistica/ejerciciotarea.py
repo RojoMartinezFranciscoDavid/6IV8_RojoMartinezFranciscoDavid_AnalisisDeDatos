@@ -42,16 +42,16 @@ def tabla_frecuencias(columnas):
     })
     return tabla_frecuencia
 
-# Mostrar tabla de frecuencias para 'median_house_value'
+
 tabla_frecuencia = tabla_frecuencias(df['median_house_value'])
 print("\nTabla de Frecuencia de median_house_value:")
-print(tabla_frecuencia.head(10))  # Mostrar solo los primeros 10 valores
+print(tabla_frecuencia.head(15))
 
-# Graficar histogramas
-plt.figure(figsize=(12, 6))
-sns.histplot(df['median_house_value'], bins=30, kde=True, color='blue', label='Media del Valor de la casa')
-sns.histplot(df['total_bedrooms'], bins=30, kde=True, color='red', label='Total de Cuartos', alpha=0.6)
-sns.histplot(df['population'], bins=30, kde=True, color='green', label='Suma', alpha=0.6)
+
+plt.figure(figsize=(10, 4))
+sns.histplot(df['median_house_value'], bins=10, kde=True, color='purple', label='Media del Valor de la casa')
+sns.histplot(df['total_bedrooms'], bins=10, kde=True, color='pink', label='Total de Cuartos', alpha=0.6)
+sns.histplot(df['population'], bins=10, kde=True, color='black', label='Suma', alpha=0.6)
 plt.legend()
 plt.xlabel('Valores')
 plt.ylabel('Frecuencia')
