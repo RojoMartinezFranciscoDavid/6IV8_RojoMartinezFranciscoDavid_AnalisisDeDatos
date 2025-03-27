@@ -2,13 +2,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+#ahí le pone usted su ruta :p
 uno = pd.read_excel("ElementosBasicosEstadistica/proyecto1.xlsx")
 dos = pd.read_excel("ElementosBasicosEstadistica/Catalogo_sucursal.xlsx")
 uno_combinado = pd.concat([uno,dos])
 uno_combinado.to_excel("unoydos.xlsx", index= False)
 
-df = pd.read_csv('ElementosBasicosEstadistica/unoydos.csv')
+df = pd.read_csv('/ElementosBasicosEstadistica/unoydos.csv')
 
 
 ventas_tot = df["ventas_tot"].sum()
