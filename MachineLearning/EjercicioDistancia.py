@@ -7,18 +7,19 @@ from scipy.spatial import distance
 #Definimos las coordenadas de las puntos
 
 puntos={
-    'punto A':[2,3],
-    'punto B':[5,4],
-    'punto C':[1,1],
-    'punto D':[6,7],
-    'punto E':[3,5],
-    'punto F':[8,2],
-    'punto G':[4,6],
-    'punto H':[2,1]
+    'Tienda A':[2, 3],
+    'Tienda B':[5, 4],
+    'Tienda C':[1, 1],
+    'Tienda D':[6, 7],
+    'Tienda E':[3, 5],
+    'Punto F': (8, 2),
+    'Punto G': (4, 6),
+    'Punto H': (2, 1)
+    
     
 }
 
-#Convertir las coordenadas a un datraframe para facilitar el cálculo
+
 
 df_puntos= pd.DataFrame(puntos).T
 df_puntos.columns=['X','Y']

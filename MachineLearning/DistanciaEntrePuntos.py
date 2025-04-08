@@ -2,31 +2,33 @@ import numpy as np
 import pandas as pd
 from scipy.spatial import distance
 
-#Definimos las coordenadas de las tiendas
+
 
 tiendas={
-    'Tienda A':[1,1],
-    'Tienda B':[1,5],
-    'Tienda C':[7,1],
-    'Tienda D':[3,3],
-    'Tienda E':[4,8]
+    'Tienda A':[2, 3],
+    'Tienda B':[5, 4],
+    'Tienda C':[1, 1],
+    'Tienda D':[6, 7],
+    'Tienda E':[3, 5],
+    'Punto F': (8, 2),
+    'Punto G': (4, 6),
+    'Punto H': (2, 1)
     
 }
 
-#Convertir las coordenadas a un datraframe para facilitar el cálculo
 
 df_tiendas= pd.DataFrame(tiendas).T
 df_tiendas.columns=['X','Y']
 print("coordenadas de las tiendas")
 print(df_tiendas)
 
-# Inicializamos un dataframe para almacenar las distancias
+
 
 distancias_eu=pd.DataFrame(index=df_tiendas.index, columns=df_tiendas.index)
 distancias_mh=pd.DataFrame(index=df_tiendas.index, columns=df_tiendas.index)
 distancias_ch=pd.DataFrame(index=df_tiendas.index, columns=df_tiendas.index)
 
-#Cálculo de distancias
+
 
 for i in df_tiendas.index:
     for j in df_tiendas.index:
@@ -37,7 +39,7 @@ for i in df_tiendas.index:
         #Distancia Cheby
         distancias_ch.loc[i,j]=distance.chebyshev(df_tiendas.loc[i],df_tiendas.loc[j])
         
-#Mostrar las distancias/resultados
+
 print("\nDistancias Euclideanas entre las tiendas: ")
 print(distancias_eu)
 print("\nDistancias Manhattan entre las tiendas: ")
